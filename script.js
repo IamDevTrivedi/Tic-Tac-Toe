@@ -49,12 +49,22 @@ boxes.forEach((box) => {
 })
 
 const resetGame = () => {
-    turn = true;  
+    turn = true;
     boxes.forEach((box, idx) => {
         box.style.color = "";
         box.innerText = `${mapArray[idx]}`;
     })
     colorPlayer();
+    // #game-box : display: block & #db : display: none below 
+
+    // done ->
+    let to_show = document.querySelector("#game-box");
+    let to_hide = document.querySelector("#db");
+
+    to_show.style.display = "block";
+    to_hide.style.display = "none";
+
+    return;
 }
 
 const checkWinner = () => {
@@ -70,16 +80,40 @@ const checkWinner = () => {
         }
 
         if (val1 === val2 && val2 === val3) {
-            alert("Player " + val1 + " is The Winner");
-            resetGame();
-            turn = false ; 
+
+            // remove the alert here and make the display none for the #game-box and display flex for #db
+            // done -> 
+            let to_hide = document.querySelector("#game-box");
+            let to_show = document.querySelector("#db");
+
+            to_hide.style.display = "none";
+            to_show.style.display = "flex";
+
+            let to_display = document.querySelector(".decision");
+            to_display.innerHTML = "Congratulations <br> Player " + val1 + " is the Winner ";
+
+            // alert("Player " + val1 + " is The Winner");
+            // resetGame();
+            turn = false;
             return;
         }
     }
     if (!found) {
-        alert("The Game is Tie! Play Again?");
-        resetGame();
-        turn = false ; 
+        // remove the alert here and make the display none for the #game-box and display flex for #db
+
+        // done ->
+        let to_hide = document.querySelector("#game-box");
+        let to_show = document.querySelector("#db");
+
+        to_hide.style.display = "none";
+        to_show.style.display = "flex";
+
+        let to_display = document.querySelector(".decision");
+        to_display.innerHTML = "Oops <br> The Game is a Tie";
+
+        // alert("The Game is Tie! Play Again?");
+        // resetGame();
+        turn = false;
     }
     return;
 }
@@ -89,6 +123,11 @@ document.addEventListener("keydown", (event) => {
         let boxNumber = parseInt(event.key);
         let box = document.querySelector(`.box${boxNumber}`);
         handleBoxClick(box);
+    } else if (event.key === 'Enter') {
+        if (document.querySelector("#db").style.display === "flex") {
+            let resetBtn2 = document.querySelector("#reset-2");
+            resetBtn2.click();
+        }
     }
 });
 
