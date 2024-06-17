@@ -51,7 +51,7 @@
         0 0 80px rgba(255, 255, 255, 0.1);
 }
 
-#reset-game{
+.reset-game{
     height: 50px;
     width: 150px;
     margin-top: 20px;
@@ -61,7 +61,7 @@
     transition: all linear 0.2s 10ms;
 }
 
-#reset-game:hover{
+.reset-game:hover{
     transform: scale(1.1);
     box-shadow:
         0 0 20px rgba(255, 255, 255, 0.7),
@@ -110,7 +110,7 @@
         font-size: 32px;
     }
 
-    #reset-game {
+    .reset-game {
         width: 130px;
         margin-top: 0px ; 
     }
@@ -135,9 +135,33 @@
         font-size: 24px;
     }
 
-    #reset-game {
+    .reset-game {
         width: 100px;
         height: 40px;
         margin-top: 0px ; 
     }
+}
+
+#db{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+
+    height: 75vh;
+    width: 60vw;
+
+    border: 3px solid white;
+    margin: auto;
+
+    margin-bottom: 12.5vh;
+    margin-top: 12.5vh;
+
+    display: none;
+}
+
+.decision-box .decision{
+    font-size: 50px ;
+    padding: 20px;
 }
