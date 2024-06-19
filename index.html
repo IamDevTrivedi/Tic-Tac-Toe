@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tie Toc Toe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="game-box">
+        <div class="title-box">
+            <div id="p1">PLAYER-X</div>
+            <button id="reset-1" class="reset-game" onclick=resetGame()>Reset Game</button>
+            <div id="p2">PLAYER-O</div>
+        </div>
+        <div class="grid-box">
+            <div class="box box7">7</div>
+            <div class="box box8">8</div>
+            <div class="box box9">9</div>
+            <div class="box box4">4</div>
+            <div class="box box5">5</div>
+            <div class="box box6">6</div>
+            <div class="box box1">1</div>
+            <div class="box box2">2</div>
+            <div class="box box3">3</div>
+        </div>
+    </div>
+
+    <div class="decision-box" id="db">
+        <div class="decision">This is the Decision ShowCase Message Box</div>
+        <button class="reset-game" id="reset-2" onclick=resetGame()>Reset Game</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
